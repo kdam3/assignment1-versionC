@@ -101,9 +101,12 @@ def valid_date(date: str) -> bool:
     try:
 	day, mon, year = (int(x) for x in date.split('/'))
 	if mon <1 or mon >12:
-		return False
+		usage()
 	if day <1 or day > mon_max(mon, year):
-		return False
+		usage()
+	return True
+    except ValueError:
+	usage()
     ...
 
 def day_iter(start_date: str, num: int) -> str:
