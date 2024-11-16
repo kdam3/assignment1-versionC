@@ -16,8 +16,8 @@ Semester: <Fall> <2024>
 Description: <Assignment 1 - Version C>
 '''
 
-import sys import datetime
-from datetime 
+import sys
+from datetime import datetime
 
 def day_of_week(date: str) -> str:
     "Based on the algorithm by Tomohiko Sakamoto"
