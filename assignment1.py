@@ -4,16 +4,16 @@
 OPS445 Assignment 1
 Program: assignment1.py 
 The python code in this file is original work written by
-"Student Name". No code in this file is copied from any other source
+"Kameron Dam". No code in this file is copied from any other source
 except those provided by the course instructor, including any person,
 textbook, or on-line resource. I have not shared this python script
 with anyone or anything except for submission for grading. I understand
 that the Academic Honesty Policy will be enforced and
 violators will be reported and appropriate action will be taken.
 
-Author: <Student Name>
-Semester: <Fall/Winter/Summer> <Year>
-Description: <fill this in>
+Author: <Kameron Dam>
+Semester: <Fall> <2024>
+Description: <Assignment 1 - Version C>
 '''
 
 import sys
@@ -30,6 +30,7 @@ def day_of_week(date: str) -> str:
 
 def leap_year(year: int) -> bool:
     "return true if the year is a leap year"
+    return (year % 4 == 0 and year % 100 !=0) or (year % 400 == 0)
     ...
 
 def mon_max(month:int, year:int) -> int:
