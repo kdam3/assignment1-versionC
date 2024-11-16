@@ -132,11 +132,11 @@ if __name__ == "__main__":
 		print(f"Invalid date")
 		usage()
     # check that second arg is a valid number (+/-)
-        try:
-	    num = int(num_str)
-	except ValueError:
-	    print("Invalid number entry")
-	    usage()
+    try:
+	num = int(num_str)
+    except ValueError:
+	print("Invalid number entry")
+	usage()
     # call day_iter function to get end date, save to x
     # print(f'The end date is {day_of_week(x)}, {x}.')
 	print(f"The end date is {day_of_week(end_date)}, {end_date}.")
