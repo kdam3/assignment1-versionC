@@ -112,7 +112,7 @@ def day_iter(start_date: str, num: int) -> str:
 	    current_date = after(current_date)
 	else:
 	    current_date = before(current_date)
-    return current_dat
+    return current_date
     ...
 
 if __name__ == "__main__":
