@@ -107,6 +107,14 @@ def valid_date(date: str) -> bool:
 	return True
     except ValueError:
 	usage()
+    if not valid_date(date_str):
+	print(f"Invalid date entry")
+
+    try:
+	num = int(num_str)
+    except ValueError:
+	print(f"Invalid number entry")
+	usage()
     ...
 
 def day_iter(start_date: str, num: int) -> str:
@@ -121,6 +129,15 @@ def day_iter(start_date: str, num: int) -> str:
 
 if __name__ == "__main__":
     # check length of arguments
+	if len(sys.argv) !=3:
+		usage()
+	
+	date_str = sys.argv[1]
+	num_str = sys.argv[2]
+
+	if not valid_date(date_str):
+		print(f"Invalid date")
+		usage()
     # check first arg is a valid date
     # check that second arg is a valid number (+/-)
     # call day_iter function to get end date, save to x
