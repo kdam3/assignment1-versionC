@@ -80,15 +80,15 @@ def after(date: str) -> str:
 
 def before(date: str) -> str:
     "Returns previous day's date as DD/MM/YYYY"
-    day, mon, year =(int(x) for x in date.split('/'))
+    day, mon, year = (int(x) for x in date.split('/'))
     day -= 1
-    if day <1:
-	mon -=1
-	if mon <1:
-	    mon =12
-	    year -=1
-	day = mon_max(mon, year)
-    
+    if day < 1:
+        mon -= 1
+        if mon < 1:
+            mon = 12
+            year -= 1
+        day = mon_max(mon, year)
+    return f"{day:02}/{mon:02}/{year}"
 
 def usage():
     "Print a usage message to the user"
@@ -99,23 +99,14 @@ def usage():
 def valid_date(date: str) -> bool:
     "check validity of date"
     try:
-	day, mon, year = (int(x) for x in date.split('/'))
-	if mon <1 or mon >12:
-		usage()
-	if day <1 or day > mon_max(mon, year):
-		usage()
-	return True
+        day, mon, year = (int(x) for x in date.split('/'))
+        if mon < 1 or mon > 12:
+            return False
+        if day < 1 or day > mon_max(mon, year):
+            return False
+        return True
     except ValueError:
-	usage()
-    if not valid_date(date_str):
-	print(f"Invalid date entry")
-
-    try:
-	num = int(num_str)
-    except ValueError:
-	print(f"Invalid number entry")
-	usage()
-    
+        return False
 
 def day_iter(start_date: str, num: int) -> str:
     "iterates from start date by num to return end date in DD/MM/YYYY"
@@ -134,12 +125,17 @@ if __name__ == "__main__":
 	
 	date_str = sys.argv[1]
 	num_str = sys.argv[2]
-
+    # check first arg is a valid date
 	if not valid_date(date_str):
 		print(f"Invalid date")
 		usage()
-    # check first arg is a valid date
     # check that second arg is a valid number (+/-)
+        try:
+	    num = int(num_str)
+	except ValueError:
+	    print("Invalid number entry")
+	    usage()
     # call day_iter function to get end date, save to x
     # print(f'The end date is {day_of_week(x)}, {x}.')
+	print(f"The end date is {day_of_week(end_date)}, {end_date}.")
     pass
