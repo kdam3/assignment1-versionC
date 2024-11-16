@@ -32,12 +32,12 @@ def day_of_week(date: str) -> str:
 def leap_year(year: int) -> bool:
     "return true if the year is a leap year"
     return (year % 4 == 0 and year % 100 !=0) or (year % 400 == 0)
-    ...
+    
 
 def mon_max(month:int, year:int) -> int:
     "returns the maximum day for a given month. Includes leap year check"
     month_days = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11:30, 12: 31}
-    ...
+    
 
 def after(date: str) -> str: 
     '''
@@ -88,7 +88,7 @@ def before(date: str) -> str:
 	    mon =12
 	    year -=1
 	day = mon_max(mon, year)
-    ...
+    
 
 def usage():
     "Print a usage message to the user"
@@ -115,7 +115,7 @@ def valid_date(date: str) -> bool:
     except ValueError:
 	print(f"Invalid number entry")
 	usage()
-    ...
+    
 
 def day_iter(start_date: str, num: int) -> str:
     "iterates from start date by num to return end date in DD/MM/YYYY"
@@ -125,7 +125,7 @@ def day_iter(start_date: str, num: int) -> str:
 	else:
 	    current_date = before(current_date)
     return current_date
-    ...
+    
 
 if __name__ == "__main__":
     # check length of arguments
