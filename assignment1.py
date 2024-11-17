@@ -120,23 +120,24 @@ def day_iter(start_date: str, num: int) -> str:
 
 if __name__ == "__main__":
     # check length of arguments
-    if len(sys.argv) !=3:
+    if len(sys.argv) != 3:
         usage()
-	
-        date_str = sys.argv[1]
-        num_str = sys.argv[2]
+    
+    date_str = sys.argv[1]
+    num_str = sys.argv[2]
+    
     # check first arg is a valid date
     if not valid_date(date_str):
         print(f"Invalid date")
         usage()
+    
     # check that second arg is a valid number (+/-)
     try:
         num = int(num_str)
     except ValueError:
         print("Invalid number entry")
         usage()
-    # call day_iter function to get end date, save to x
-    # print(f'The end date is {day_of_week(x)}, {x}.')
-        end_date = day_iter(date_str, num)
-        print(f"The end date is {day_of_week(end_date)}, {end_date}.")
-    pass
+    
+    # call day_iter function to get end date, save to end_date
+    end_date = day_iter(date_str, num)
+    print(f"The end date is {day_of_week(end_date)}, {end_date}.")
