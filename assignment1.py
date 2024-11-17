@@ -137,5 +137,6 @@ if __name__ == "__main__":
         usage()
     # call day_iter function to get end date, save to x
     # print(f'The end date is {day_of_week(x)}, {x}.')
+        end_date = day_iter(date_str, num)
         print(f"The end date is {day_of_week(end_date)}, {end_date}.")
     pass
