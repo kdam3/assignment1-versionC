@@ -38,7 +38,7 @@ def mon_max(month: int, year: int) -> int:
     "returns the maximum day for a given month. Includes leap year check"
     month_days = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11:30, 12: 31}
     if month == 2 and leap_year(year):
-	return 29
+        return 29
     return month_days[month]    
 
 def after(date: str) -> str: 
@@ -114,7 +114,7 @@ def day_iter(start_date: str, num: int) -> str:
     "iterates from start date by num to return end date in DD/MM/YYYY"
     for _ in range(abs(num)):
         if num >0:
-	    current_date = after(current_date)
+            current_date = after(current_date)
         else:
              current_date = before(current_date)
     return current_date
@@ -122,22 +122,22 @@ def day_iter(start_date: str, num: int) -> str:
 
 if __name__ == "__main__":
     # check length of arguments
-	if len(sys.argv) !=3:
-		usage()
+    if len(sys.argv) !=3:
+        usage()
 	
-	date_str = sys.argv[1]
-	num_str = sys.argv[2]
+        date_str = sys.argv[1]
+        num_str = sys.argv[2]
     # check first arg is a valid date
-	if not valid_date(date_str):
-		print(f"Invalid date")
-		usage()
+    if not valid_date(date_str):
+        print(f"Invalid date")
+        usage()
     # check that second arg is a valid number (+/-)
     try:
-	num = int(num_str)
+        num = int(num_str)
     except ValueError:
-	print("Invalid number entry")
-	usage()
+        print("Invalid number entry")
+        usage()
     # call day_iter function to get end date, save to x
     # print(f'The end date is {day_of_week(x)}, {x}.')
-	print(f"The end date is {day_of_week(end_date)}, {end_date}.")
+        print(f"The end date is {day_of_week(end_date)}, {end_date}.")
     pass
